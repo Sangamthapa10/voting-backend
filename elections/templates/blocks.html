@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blockchain Viewer</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            padding: 20px;
+        }
+        .block {
+            background: #1e293b;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .hash {
+            color: #22c55e;
+            font-size: 12px;
+            word-break: break-all;
+        }
+        .prev {
+            color: #f97316;
+            font-size: 12px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🔗 Vote Blockchain</h1>
+
+{% for block in blocks %}
+<div class="block">
+    <h3>Block {{ block.index }}</h3>
+    <p><strong>Timestamp:</strong> {{ block.timestamp }}</p>
+    <p><strong>Vote:</strong> {{ block.data }}</p>
+
+    <p class="hash"><strong>Hash:</strong> {{ block.hash }}</p>
+    <p class="prev"><strong>Previous Hash:</strong> {{ block.previous_hash }}</p>
+</div>
+⬇️
+{% endfor %}
+
+</body>
+</html>
